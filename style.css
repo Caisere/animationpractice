@@ -17,6 +17,12 @@ $breakpoint argument choices
 - big-desktop
 */
 
+body {
+  @media (max-width: 37.5em) {
+    margin-bottom: 30px;
+    background-color: #1f242d;
+   } 
+}
 
 html {
   font-size: 62.5%; }
@@ -150,6 +156,8 @@ section.show-animate .animate {
   transform: translateY(0);
 }
 
+
+
 .sec-5 .images img {
   max-width: 20rem;
   margin: 0 20px;
@@ -166,4 +174,5 @@ section.show-animate .animate {
 
 .sec-5.show-animate .images img {
   transform: translateX(0);
+
 }
