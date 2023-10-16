@@ -1,0 +1,169 @@
+/*
+0-600px:    Phone
+600-900px:  Tab-port
+900-1200px: Tab-land
+[1200-1800] is where our normal style apply
+1800 +:     Big Desktop     
+*/
+/*@mixin respond-phone {
+    @media (max-width: 600px) { @content };
+}
+*/
+/*
+$breakpoint argument choices
+- phone 
+- tab-port
+- tab-land
+- big-desktop
+*/
+
+
+html {
+  font-size: 62.5%; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+  @media (min-width: 112.5em) {
+    html {
+      font-size: 75%; }
+}
+
+
+* {
+  margin: 0;
+  font-family: sans-serif;
+  box-sizing: border-box;
+  padding: 0;
+}
+
+section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: #1f242d;
+  overflow-x: hidden;
+
+  @media (max-width: 37.5em) {
+    min-height: 70vh;
+    padding: 2rem; 
+  } 
+}
+
+ h1 {
+  position: relative;
+  font-size: 7rem;
+  color: #fff;
+
+  
+  @media (max-width: 37.5em) {
+    font-size: 3rem;
+    margin-bottom: 2rem; 
+  } 
+}
+
+p {
+  position: relative;
+  font-size: 3rem;
+  color: #0ef;
+  font-weight: 400;
+
+  @media (max-width: 37.5em) {
+    font-size: 1rem;
+    font-weight: 100; 
+  } 
+}
+
+section .animate {
+  transition: 1s;
+  filter: blur(5px);
+  opacity: 0;
+}
+
+section.show-animate .animate {
+  transition: 1s;
+  filter: blur(0);
+  opacity: 1;
+}
+
+.sec-1 .animate {
+  transform: translateX(-100%);
+}
+
+.sec-1.show-animate .animate {
+  transform: translateX(0);
+}
+
+.sec-2 p {
+  color: #0f0;
+}
+
+.sec-2 .animate {
+  transform: translateX(150%);
+}
+
+.sec-2.show-animate .animate {
+  transform: translateX(0);
+}
+
+.sec-3 p {
+  color: #e0f;
+}
+
+.sec-3 .animate {
+  transform: scale(.7);
+}
+
+.sec-3.show-animate .animate {
+  transform: scale(1);
+}
+
+.sec-4 p {
+  color: #ff0;
+}
+
+.sec-4 .animate {
+  transform: translateY(-100%);
+}
+
+.sec-4 .showRight-animate {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background:#1f242d;
+  /*background: transparent;*/
+  transition: 1s;
+  transition-delay: calc(.2s * var(--i));
+}
+
+.sec-4.show-animate .showRight-animate {
+  width: 0;
+}
+
+.sec-4.show-animate .animate {
+  transform: translateY(0);
+}
+
+.sec-5 .images img {
+  max-width: 20rem;
+  margin: 0 20px;
+  transform: translateX(-100%);
+  transition-delay: calc(.2s * var(--i));
+
+  @media (max-width: 37.5em) {
+    margin-bottom: 7px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+   } 
+}
+
+.sec-5.show-animate .images img {
+  transform: translateX(0);
+}
